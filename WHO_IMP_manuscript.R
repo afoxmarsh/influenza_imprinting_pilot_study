@@ -1080,11 +1080,9 @@ box_HI_NI_ratio_SA19 <- ggplot(subset(data_comp_rn,StudyYear<3 &  class %in% c("
 box_HI_NI_ratio_SA19
 
 ###Figure S6 HI to NI titre ratio -----
-SuppFig_HI_NI_ratio_20vax <- ggarrange( box_HI_NI_ratio_Vi19, box_HI_NI_ratio_SA19, ncol=2)
+SuppFig_HI_NI_ratio_20vax <- ggarrange( box_HI_NI_ratio_SA19,box_HI_NI_ratio_Vi19,  ncol=2)
 SuppFig_HI_NI_ratio_20vax 
 ggsave("SuppFig_HI_NI_ratio_20vax.pdf", SuppFig_HI_NI_ratio_20vax, units = "cm", width = 30, height = 11)
-ggsave("FigureS3_line_BHI_titres.pdf", B_titres_plot, units="cm", width = 28, height = 10.6)
-
 
 ##HIvNI scatter----
 scatterMi15_HI_NI <- ggplot(data_comp_rn, aes(HI_Mi15, NI_Mi15)) +
@@ -1539,3 +1537,4 @@ scatter_HI_HAst <- ggplot(subset(data_comp_rn,!is.na(HA_stem_titre)), aes(HI_Sw1
   stat_cor()
 scatter_HI_HAst
 ggsave("Figure S9 HISw17_HAstem_corr.pdf",scatter_HI_HAst, unit = "cm", width = 12, height = 10)
+
